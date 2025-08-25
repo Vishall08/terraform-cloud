@@ -15,8 +15,8 @@ access_key = var.access_key
 secret_key = var.secret_key
 }
 resource "aws_instance" "myinstance" {
-  ami           = "ami-0b016c703b95ecbe4"
-  instance_type = "t2.micro"
+  ami           = var.ami-id
+  instance_type = var.instance_type
   count = 2
   tags = {
     Name = "myinstance ${count.index+1}"
